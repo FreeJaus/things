@@ -1,0 +1,11 @@
+- prusai3-derivs
+  - https://github.com/lautr3k/RepRap-iTopie
+  - https://github.com/mjrice/Wilson2
+  - http://reprap.org/wiki/Prusa_i3_Rework_Introduction
+- scad
+  - [Common Hotend Library](http://www.thingiverse.com/thing:919900)
+  - [OpenSCAD ISO metric thread library / functions](http://www.thingiverse.com/thing:311031)
+  - [Thread-drawing modules for OpenSCAD](http://dkprojects.net/openscad-threads/)
+- stl
+  - [E3D v6 Bowden X-carriage mount Prusa i3](http://www.thingiverse.com/thing:547706)
+- [Linkage](http://blog.rectorsquid.com/linkage-3-0-11-beta/)

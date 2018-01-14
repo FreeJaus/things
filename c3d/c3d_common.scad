@@ -14,10 +14,10 @@
 - The Merchant
 - 3 Metropolis tokens
 - Barbarian Invasion Plan
-- 6x Defender of Catan Victory Point Cards
+- 6x Defender of Catan Victory Point Cards + 3x for 5-6 expansion
 
 # Seafarers
-- 8 Victory Point chits
+- 8x Victory Point chits + 6x for 5-6 expansion
 - The Pirate
 */
 
@@ -30,6 +30,7 @@ use <parts/cities_knights/c3d_barbarian_plan.scad>;
 use <parts/markers/c3d_victory_road.scad>;
 use <parts/markers/c3d_army.scad>;
 use <parts/markers/c3d_chit.scad>;
+use <parts/markers/c3d_defender.scad>;
 use <parts/seafarers/c3d_pirate.scad>;
 
 //---
@@ -43,6 +44,10 @@ translate([100,50,0]) barbarian_plan();
 
 for (i = [0:2]) translate([100+i*30,0,0]) metropoly();
 
-translate([100,50,0]) victory_road();
-translate([100,75,0]) army();
-for (i = [0:7]) translate([100,100,0]) chit();
+translate([75,50,0]) victory_road();
+translate([75,75,0]) army();
+for (i = [0:13]) translate([75,100+i*25,0]) chit();
+
+for (i = [0:8]) translate([125,75+i*25,0]) defender();
+
+pirate();

@@ -24,6 +24,10 @@
 - Harbors
 - Numbers
 
+- Frames
+- The Fishermen of Catan
+- Event cards (dice-replacement)
+
 # Catanmaps
 
 http://www.catanmaps.com

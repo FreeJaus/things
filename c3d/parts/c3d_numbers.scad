@@ -10,6 +10,8 @@
 - 2x "11"
 - 1x "12"
 
+28 for 5-6 expansions
+
 ## Seafarers
 
 10 Number chits (one each of numbers 2-6 & 8-12)

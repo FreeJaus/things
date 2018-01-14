@@ -4,7 +4,6 @@
 - 5x Settlement
 - 4x City
 - 15x Road
-- Building Costs card [!]
 
 ## Cities & Knights
 
@@ -18,6 +17,13 @@
 ## Seafarers
 
 - 15x ships
+
+---
+
+- https://catanshop.com/replacement-wood-settlers-of-catan [$7]
+- https://catanshop.com/replacement-wood-cities-knights-expansion [$7]
+- https://catanshop.com/replacement-wood-seafarers-expansion [$7]
+- https://catanshop.com/replacement-wood-traders-barbarians-expansion [$7]
 
 */
 

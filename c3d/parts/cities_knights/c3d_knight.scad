@@ -5,17 +5,10 @@ module level_rows(l) {
   translate([0,0,-(l-1)*2*nozzle])
   for (i = [0:l-1]) {
     translate([0,0,i*4*nozzle]) difference() {
-      cylinder(r=10,h=2*nozzle);
-      cylinder(r=10-2*nozzle,h=2*nozzle);
+      cylinder(r=8.26,h=2*nozzle);
+      cylinder(r=8.26-2*nozzle,h=2*nozzle);
     }
   }
-  /*
-    if (l==1) {
-    }
-    if (l==2) {
-    }
-    if (l==3) {
-    }*/
 }
 
 module knight(l) {
@@ -43,7 +36,7 @@ module knight(l) {
  rotate([0,0,-30])
  difference() {
    difference() {
-     translate([0,0,0]) cylinder(r=1.25*r1,h=h);
+     translate([0,0,0]) cylinder(r=1.1*r1,h=h);
      union() {
        translate([-3,0,0]) cylinder(r=r3+2.75,h=1.5*h);
        translate([0,0,.5*h]) level_rows(l);
@@ -98,5 +91,5 @@ module knight(l) {
       rotate([0,0,150]) translate([2,0,0]) cylinder(r1 = r5-2, r2 = 0, h=h8*h);
       rotate([0,0,30]) translate([2,0,0]) cylinder(r1 = r5-2, r2 = 0, h=h8*h);
     }
-  }
+  } 
 }

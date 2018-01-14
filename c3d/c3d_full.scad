@@ -91,8 +91,8 @@ module toshow(good) {
 
 to=true;
 
-put_tile(0,0) toshow(to);
-put_tile(1.5,1.5) toshow(to);
+//put_tile(0,0) toshow(to);
+//put_tile(1.5,1.5) toshow(to);
 
 for (k=[0:1:2]) {
  color("LightGrey") put_tile(k+2,k) toshow(to);

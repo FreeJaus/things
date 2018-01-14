@@ -1,19 +1,28 @@
-- Longest Road Special Victory Point card
-- Largest Army Special Victory Point card
-- The Robber
-- 2 D6 Dice 
+- China https://www.thingiverse.com/thing:1071048
+- Medieval https://www.thingiverse.com/thing:1076785
+- Aztec https://www.thingiverse.com/thing:1074982
+- Egypt https://www.thingiverse.com/thing:1074973
+- Roman https://www.thingiverse.com/thing:1079138
+- Russian https://www.thingiverse.com/thing:2044808
+- Incas https://www.thingiverse.com/thing:444178
+- Europe https://www.thingiverse.com/thing:125700
+- Tatooine https://www.thingiverse.com/thing:2397457
 
-Cities & Knights
-- Barbarian Invasion Plan
-- The Barbarian Fleet
-- The Merchant 
-- 3 Metropolis tokens
-- The Red Die
-- The Event Die 
+---
 
-Seafarers
-- 8 Victory Point chits 
-- The Pirate
+- https://www.thingiverse.com/thing:2509263
+
+---
+
+https://www.thingiverse.com/thing:687162
+
+---
+
+- 2 D6 Dice
+  - The Red Die
+- The Event Die (Cities & Knights)
+
+`c3d_common.scad`
 
 # Hexes
 
@@ -35,7 +44,7 @@ Seafarers
 - 1x Forest
 - 1x Pasture
 - 2x Mountains
-- 2x Hills 
+- 2x Hills
 
 ## Explorers & Pirates
 
@@ -69,7 +78,7 @@ Seafarers
 
 ## Seafarers
 
-10 Number chits (one each of numbers 2-6 & 8-12) 
+10 Number chits (one each of numbers 2-6 & 8-12)
 
 # Cards
 
@@ -91,31 +100,17 @@ Seafarers
 
 ## Cities & Knights
 
-6 Defender of Catan Cards
-
 36 Commodity Cards:
 
 - 12x Coin
 - 12x Paper
-- 12x Cloth 
+- 12x Cloth
 
 54 Progress Cards
 
 # For each player
 
-- 5x Settlement
-- 4x City
-- 15x Road
-- Building Costs card 
-
-## Cities & Knights
-
-- Tiered Knights:
-  - 2x Basic Knights
-  - 2x Strong Knights
-  - 2x Mighty Knights 
-- 3x City Walls
-- City Development Calendars 
+`c3d_each_player.scad`
 
 # Catanmaps
 

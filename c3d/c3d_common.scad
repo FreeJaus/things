@@ -41,8 +41,8 @@ translate([50,0,0]) merchant();
 translate([100,50,0]) barbarians();
 translate([100,50,0]) barbarian_plan();
 
-for (i = [0:2]) translate([100,0,0]) metropoly();
+for (i = [0:2]) translate([100+i*30,0,0]) metropoly();
 
 translate([100,50,0]) victory_road();
-translate([100,50,0]) victory_army();
-for (i = [0:7]) translate([100,50,0]) victory_chit();
+translate([100,75,0]) army();
+for (i = [0:7]) translate([100,100,0]) chit();

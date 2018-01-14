@@ -5,12 +5,24 @@ use <markers/c3d_victory_road.scad>;
 use <markers/c3d_army.scad>;
 use <markers/c3d_chit.scad>;
 use <cities_knights/c3d_knight.scad>;
+use <cities_knights/c3d_wall.scad>;
 use <seafarers/c3d_ship.scad>;
 use <c3d_road.scad>;
+use <c3d_settlement.scad>;
+use <c3d_city.scad>;
 
-inner_wall = 4*nozzle;
+min_clearance = 4*nozzle;
+main_clearance = 2*(base_radius+nozzle)+min_clearance;
+
 outer_wall = 3*nozzle;
 wall_height = 10;
+rs_l = base_segment_width+2*nozzle+5; // Road/ship hole height
+rs_w = base_thickness+2*nozzle+5;     // Road/ship hole width
+vr_h = 5+13*nozzle+4*min_clearance;
+deck_l = 2*outer_wall+2*nozzle+4*main_clearance+2*min_clearance+5*(rs_l+min_clearance);
+deck_w = 2*outer_wall+2*nozzle+4*main_clearance+min_clearance + vr_h;
+
+//soporte para cartas (en la mano)
 
 module hull_box(l,w,h,r) {
   linear_extrude(h) hull() {
@@ -21,74 +33,114 @@ module hull_box(l,w,h,r) {
   }
 }
 
-//soporte para cartas (en la mano)
+module improvements() {
+  clearance = 2*nozzle;
+  translate([2.5+.5*nozzle, 2.5+2.5*nozzle, 0]) {
+    translate([0,0,-10+clearance]) cylinder(r=2.5+.5*nozzle,h=20);
+    translate([2.5+.5*nozzle+2*clearance, 0, 0]) {
+      translate([0, -2.5, 0]) cube([clearance,5,20]);
+      translate([2.5+3*clearance, 0, 0]) {
+        for (i = [0:1]) {
+          translate([i*(5+nozzle+2*clearance), 0, -10+clearance]) cylinder(r=2.5+.5*nozzle,h=20);
+        }
+        translate([7.5+1.5*nozzle+2*clearance, 0, 0]) {
+          translate([clearance,-(2.5+clearance),0]) difference() {
+              cube([15*(1+nozzle), 5*(1+nozzle), 20]);
+              translate([5*(1+nozzle),nozzle,0]) cube([10*(1+nozzle)-nozzle, 5+3*nozzle, 20]);
+          }
+          translate([2.5+.5*nozzle+2*clearance, 0, 0]) {
+            translate([0, 0, -10+clearance]) cylinder(r=2.5+.5*nozzle,h=20);
+            translate([5+nozzle+2*clearance, 0, 0]) {
+              for (i = [0:1]) {
+                translate([i*(5+nozzle+2*clearance), 0, -10+clearance]) cylinder(r=2.5+.5*nozzle,h=20);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+module victory_rule(l) {
+  translate([0,3*min_clearance,0]) {
+    cube([l, 2*nozzle, 20]);
+    clearance = 2*nozzle;
+    translate([ 2.5+4.5*nozzle+2*clearance, 2.5+.5*nozzle+3*clearance, 0]) {
+      translate([-2.5-3.5*nozzle-clearance, 0, -clearance]) cylinder(r=1*nozzle,h=20);
+      translate([0,0,-10+2*nozzle]) {
+        %victory_road();
+        translate([5+2*clearance+nozzle,0,0]) %army();
+        translate([10+4*clearance+2*nozzle,0,0]) %victory();
+      }
+      for (j = [0:3]) {
+        translate([j*3*clearance+(j*5)*(5+nozzle+2*clearance),0,0]) {
+          for (i = [0:4]) {
+            translate([i*(5+nozzle+2*clearance), 0, -10+clearance]) cylinder(r=2.5+.5*nozzle,h=20);
+          }
+          translate([4*(5+nozzle+2*clearance)+2.5+5.5*nozzle, 0, -clearance]) cylinder(r=1*nozzle,h=20);
+        }
+      }
+    }
+  }
+  translate([ 0, vr_h-2*nozzle-min_clearance, 0]) cube([l, 2*nozzle, 20]);
+  translate([ -20, .5*min_clearance, -9+2*nozzle]) rotate([-5,0,0]) cube([l+40, min_clearance, 20]);
+}
+
+module deck_top() {
+  difference() {
+    hull_box(deck_l,deck_w, 40+base_thickness,1);
+    translate([outer_wall+nozzle, outer_wall+nozzle, base_thickness]) hull_box(deck_l-2*outer_wall,deck_w-2*outer_wall, 50, 1);
+  }
+}
 
 module deck() {
-  l = 190;
-  w = 100;
-
-  translate([0,0,6*base_thickness-10]) {
-    translate([61.25,5.25,0]) %victory();
-    translate([12.25,5.25,0]) %army();
-    translate([19.25,5.25,0]) %victory_road();
-
-    translate([5.25,14.75,0]) %coins();
-    translate([5.25,25.75,0]) %cloth();
-    translate([5.25,36.75,0]) %books();
-  }
+  //#translate([outer_wall+nozzle, outer_wall+nozzle, base_thickness+5]) cube([4*main_clearance+2*min_clearance+5*(rs_l+min_clearance), 4*main_clearance+min_clearance, 50]);
 
   difference() {
     union() {
-      cube([l,w,base_thickness]);
-      translate([outer_wall+.5*nozzle, outer_wall+.5*nozzle, base_thickness]) hull_box(l-2*outer_wall-nozzle,w-2*outer_wall-nozzle, 10, 1);
+      hull_box(deck_l,deck_w,base_thickness,1);
+      translate([outer_wall+nozzle, outer_wall+nozzle, base_thickness]) hull_box(deck_l-2*(outer_wall+nozzle),deck_w-2*(outer_wall+nozzle), 10, 1);
     }
-    translate([outer_wall+3.5*nozzle, 5+outer_wall+2.5+8*nozzle, base_thickness+10-2*nozzle]) union() {
-      offset = 6.5+11.5*nozzle;
-      translate([2.5+.5*nozzle,2.5+.5*nozzle,0]) for (j = [0:2]) {
-        translate([-2.5,j*offset+5,0]) cube([2.5-3.625*nozzle+(30+30*nozzle),2*nozzle,20]);
-        translate([0,j*offset,-10]) cylinder(r=2.5+.5*nozzle,h=20);
-        translate([2.5+4*nozzle,j*offset-2.5,0]) cube([2*nozzle,5,20]);
-        translate([5+10*nozzle,j*offset,0]) for (i = [0:4]) {
-          translate([i*(5+5*nozzle), 0, -10]) cylinder(r=2.5+.5*nozzle,h=20);
-        }
-        translate([13+16.25*nozzle,j*offset-2.5-3*nozzle,0]) difference() {
-          cube([15+15*nozzle, 5+6*nozzle, 20]);
-          translate([6.625+nozzle,nozzle,0]) cube([10.375+8*nozzle, 5+4*nozzle, 20]);
-        }
-        //--
-        translate([-2.5,-5-2*nozzle,0]) cube([130+23*nozzle,2*nozzle,20]);
-        translate([0, -7.5-4.5*nozzle, 0]) for (i = [0:19]) {
-          translate([i*(5+5*nozzle), 0, -10]) cylinder(r=2.5+.5*nozzle,h=20);
-        }
-      }
-      translate([.5*base_segment_length,10+2*nozzle,0]) {
-        translate([-2.75,0,.5*base_segment_length-7.5])
-        //%for (j = [0:4]) for (i = [0:2])  translate([j*10, i*(4+2*nozzle),-1.75]) rotate([0,90,90]) road();
-        //for (j = [0:4]) for (i = [0:2])  translate([j*10-5.25-nozzle, -nozzle+i*(4+2*nozzle),-10]) cube([5+2*nozzle,4+nozzle,20]);
-        translate([50,0,0]) {
-          %for (i = [0:14])  translate([-5+i*(4.5+4*nozzle), nozzle+.5*base_segment_width, -1.75]) rotate([0,90,0]) road();
-          for (i = [0:14])  translate([i*(4.5+4*nozzle)-5.25-nozzle, 0, -10]) cube([4+nozzle, 5+2*nozzle, 20]);
-        }
+    translate([outer_wall+min_clearance+.5*nozzle, outer_wall+min_clearance+.5*nozzle, base_thickness+10]) {
+    //translate([0, 0, base_thickness+10]) {
 
-        translate([0,25,0])
-        for (j = [0:2]) for (i = [0:4]) {
-          translate([j*17.5-.5*base_segment_length+.5*base_segment_width, 8.5*i,-base_thickness+1.5*nozzle]) hull() {
-            cylinder(r=.5*base_segment_width+.5*nozzle,h=base_thickness+.5*nozzle);
-            translate([base_segment_length-base_segment_width,0,0]) cylinder(r=.5*base_segment_width+.5*nozzle,h=base_thickness+nozzle);
+      translate([ 0, 0, -2*nozzle]) victory_rule(deck_l-2*(outer_wall+min_clearance+.5*nozzle));
+      translate([0, vr_h, 0]) {
+        // City improvements
+        translate([4*main_clearance+min_clearance, .5*min_clearance, 0]) {
+          for (j = [0:2]) {
+            translate([ 0, j*(5+5*nozzle+2*min_clearance), -2*nozzle]) {
+              improvements();
+            }
           }
-          %translate([j*17.5, 8.5*i,-base_thickness+1.5*nozzle]) rotate([0,0,0]) ship();
+          translate([.5*nozzle, 2.5+2.5*nozzle,-10+2*nozzle]) {
+            translate([2.5, 0, 0]) %coins();
+            translate([2.5, 1*(5+5*nozzle+2*min_clearance), 0]) %cloth();
+            translate([2.5, 2*(5+5*nozzle+2*min_clearance), 0]) %books();
+          }
         }
-      }
-      translate([65,29.5,0]) {
-        for (j = [0:3]) for (i = [0:1]) translate([j*(2*base_radius+4*nozzle), i*(2*base_radius+4*nozzle),-1.75]) cylinder(r=base_radius+nozzle,h=20);
-      }
-      translate([150,0,0]) {
-        for (j = [0:1]) for (i = [0:2]) translate([j*(2*base_radius+4*nozzle), i*(2*base_radius+4*nozzle),-1.75]) {
-            %translate([0,0,1.75]) knight(i);
-            cylinder(r=base_radius+nozzle,h=20);
+        // Settlements, cities, knights and walls
+        translate([base_radius+nozzle,base_radius+nozzle,0]) {
+          for (j = [0:3]) for (i = [0:3]) {
+            translate([i*main_clearance, j*main_clearance, -2*base_thickness-nozzle]) {
+              cylinder(r=base_radius+nozzle,h=20);
+              %translate([0, 0, 2*nozzle]) if (i<2 && j>0) { knight(j);
+              } else { if (j*4+i<7) { settlement(); } else { if (j*4+i==11) { for (t = [0:2]) translate([0,0,t*10]) wall(); } else { city(); } }
+              }
+            }
+          }
+        }
+        // Roads and ships
+        translate([4*main_clearance+min_clearance, 3*main_clearance+2*(base_radius+nozzle) - (6*(rs_w+min_clearance)), 0]) {
+          for (z = [0:1]) for (j = [0:2]) for (i = [0:4]) {
+            translate([i*(rs_l+min_clearance), ((z*3)+j)*(rs_w+min_clearance)+(z*min_clearance), 0]) {
+              translate([0, 0, -10]) cube([rs_l, rs_w, 20]);
+              %translate([5, 3, 2*nozzle]) rotate([0,90,90]) if (z==0) { road(); } else { ship(); }
+            }
+          }
         }
       }
     }
   }
-//  translate([0,0,50]) cube([l,w,3*base_thickness]);
 }

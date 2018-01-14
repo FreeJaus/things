@@ -1,5 +1,5 @@
 include <c3d_params.scad>;
-use <parts/c3d_deck.scad>;
+include <parts/c3d_deck.scad>;
 use <parts/c3d_tile.scad>;
 use <parts/c3d_settlement.scad>;
 use <parts/c3d_city.scad>;
@@ -11,15 +11,22 @@ use <parts/cities_knights/c3d_metropoly.scad>;
 
 //---
 
-translate([100,100,0]) deck();
+translate([100,100,0]) {
+  deck();
+  translate([175,0,0]) deck_top();
+  #translate([0,deck_w,2*base_thickness+40])  rotate([180,0,0]) deck_top();
+}
 
 //---
 
-tile(50,2);
 d=sin(60)*(base_tile_side);
+
+tile(50,2);
+translate([0,2*d,0]) tile(50,2);
+translate([2*sin(60)*d,d]) tile(50,2);
+
 translate([.5*base_tile_side,d,base_thickness]) rotate([0,0,-60]) settlement();
 translate([-.5*base_tile_side,d,base_thickness]) city();
-  //cylinder(r=.05,h=10);
 
 translate([-base_tile_side,0,base_thickness]) {
   rotate([0,0,-60]) wall();
@@ -34,15 +41,9 @@ translate([.5*base_tile_side,3*d,base_thickness]) {
   translate([0,0,10]) city();
   translate([0,0,10+2.8*base_radius]) metropoly();
 }
-translate([-.5*base_tile_side,-d,base_thickness]) {
-    knight(1);
-}
-translate([.5*base_tile_side,-d,base_thickness]) {
-    knight(2);
-}
-translate([base_tile_side,0,base_thickness]) {
-    rotate([0,0,30]) knight(3);
-}
+translate([-.5*base_tile_side,-d,base_thickness]) knight(1);
+translate([.5*base_tile_side,-d,base_thickness]) knight(2);
+translate([base_tile_side,0,base_thickness]) rotate([0,0,30]) knight(3);
 
 translate([0,d,base_thickness]) road();
 translate([sin(60)*d,0.5*d,base_thickness]) rotate([0,0,-60]) road();
@@ -54,7 +55,3 @@ translate([1.5*base_tile_side+sin(60)*d,1.5*d,base_thickness]) rotate([0,0,-60])
 translate([1.5*base_tile_side+sin(60)*d,.5*d,base_thickness]) rotate([0,0,60]) ship();
 translate([1.5*base_tile_side,0,base_thickness]) ship();
 translate([sin(60)*d,-.5*d,base_thickness]) rotate([0,0,60]) ship();
-
-translate([0,2*d,0]) tile(50,2);
-
-translate([2*sin(60)*d,d]) tile(50,2);

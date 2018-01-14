@@ -22,7 +22,6 @@ module metropoly() {
       }
     translate([0,0,-9]) cylinder(r=.6*base_radius+.5*nozzle,h=9);
   }
-}
   translate([0,0,-.5+3*nozzle]) difference() {
     cylinder(r=base_radius,h=2);
     translate([0,0,-.5]) union() {
@@ -32,3 +31,4 @@ module metropoly() {
       cylinder(r=base_radius-2,h=3);
     }
   }
+}

@@ -17,7 +17,7 @@ module city() {
     difference() {
       cylinder(r=r2,h=.7*h2);
       for (i = [0:2]) {
-        rotate([0,0,60+i*120]) translate([.5*base_radius-1,-1.5,8]) cube([2,3,3]);
+        rotate([0,0,60+i*120]) translate([.5*base_radius-1,-1.5,7]) cube([2,3,3]);
       }
     }
     difference() {

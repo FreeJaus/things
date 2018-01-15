@@ -1,4 +1,6 @@
-# tipia.es/ludotipia
+# Services
+
+## tipia.es/ludotipia
 
 > Gastos de envío a la península: 5.5€
 
@@ -34,8 +36,25 @@
 > Colores:  Rojo, verde, azul, amarillo
 > Material: Madera
 
-# PMAproduct
+## artscow.com
+
+# Tools
+
+## PMAproduct
 
 > http://pmaproduct.com/troquelado/247-pma-11.html
 > Troqueladora PMA 11
 > https://www.youtube.com/watch?v=hnLr1NAxKA8
+
+## Plastifier
+
+- 25€ Olympia A230 Plus (DIN A4)
+- 28€ Olympia A330 (DINA4 and DIN A3)
+- 22.5€ AmazonBasics (DIN A4)
+- 26€ TOQIBO (DIN A4)
+
+---
+
+- 10€   100x A4 80mic
+- 3.24€ 100x 65x95mm 125mic
+- 2.71€ 100x 86x54mm 125mic

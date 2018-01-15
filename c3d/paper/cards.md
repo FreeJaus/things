@@ -1,5 +1,25 @@
 
-# 44x68mm
+# 44x68mm [0.647]
+
+18 per page (300/18 = 17 pages)
+Rows 3x 68mm (204mm + 6)
+Cols 6x 44mm (264mm + 33)
+
+16 per page (300/16 = 19 pages)
+Rows 4x 44mm (176mm + 34)
+Cols 4x 68mm (272mm + 25)
+
+Clearance:
+  - 56x80
+  - 50x72
+
+# 69.5x97mm [.717]
+
+Clearance:
+  - 69.5+5.5 = 75mm
+  - 97+8   = 105mm
+
+---
 
 95 resource cards:
 

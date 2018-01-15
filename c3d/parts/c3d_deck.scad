@@ -102,7 +102,9 @@ module deck() {
       hull_box(deck_l,deck_w,base_thickness,1);
       translate([outer_wall+nozzle, outer_wall+nozzle, base_thickness]) hull_box(deck_l-2*(outer_wall+nozzle),deck_w-2*(outer_wall+nozzle), 10, 1);
     }
-    translate([outer_wall+min_clearance+.5*nozzle, outer_wall+min_clearance+.5*nozzle, base_thickness+10]) {
+    union() {
+      translate([outer_wall+nozzle-1, 20, base_thickness]) cube([35,81,6]);
+    translate([outer_wall+min_clearance+nozzle, outer_wall+min_clearance+nozzle, base_thickness+10]) {
     //translate([0, 0, base_thickness+10]) {
 
       translate([ 0, 0, -2*nozzle]) victory_rule(deck_l-2*(outer_wall+min_clearance+.5*nozzle));
@@ -141,6 +143,6 @@ module deck() {
           }
         }
       }
-    }
+    }}
   }
 }

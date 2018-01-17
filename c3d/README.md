@@ -8,7 +8,7 @@
 
 # ToDo
 
-- Markers: make printable designs.
+- Fix STLs.
 - Deck:
   - Add symbols to city improvement plans
   - Add chamfers/fillets to top part.

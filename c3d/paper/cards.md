@@ -21,7 +21,7 @@ Clearance:
 
 ---
 
-95 resource cards:
+95 resource cards (+25):
 
 - 19x Lumber + 5x for 5-6 expansion
 - 19x Wool + 5x for 5-6 expansion
@@ -29,7 +29,7 @@ Clearance:
 - 19x Brick + 5x for 5-6 expansion
 - 19x Ore + 5x for 5-6 expansion
 
-25 Development cards:
+25 Development cards (+9):
 
 - 14x Knight cards + 6x for 5-6 expansion
 -  5x Victory Point cards
@@ -45,7 +45,7 @@ Clearance:
 
 ## Cities & Knights
 
-36 Commodity Cards:
+36 Commodity Cards (+27):
 
 - 12x Coin + 9x for 5-6 expansion
 - 12x Paper + 9x for 5-6 expansion

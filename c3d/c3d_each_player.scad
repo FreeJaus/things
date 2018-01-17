@@ -39,7 +39,7 @@ use <parts/markers/c3d_cities_markers.scad>;
 use <parts/markers/c3d_victory.scad>;
 
 %translate([-base_radius-2.5,-60,-nozzle]) cube([180,100,nozzle]);
-
+/*
 translate([0,50,-nozzle]) {
    %cube([165,115,nozzle]);
    translate([3,2,0]) deck();
@@ -48,6 +48,7 @@ translate([0,50,-nozzle]) {
       translate([3,2,0]) deck_top();
    }
 }
+*/
 
 translate([150,-20,0]) {
   translate([5.25,14.75,0]) coins();

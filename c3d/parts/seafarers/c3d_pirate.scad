@@ -8,5 +8,3 @@ module pirate() {
   translate([0,.5,base_thickness+0.1])
   scale([1.1,1.1,1.1]) import("../../ext/pirate_fix.STL");
 }
-
-pirate();

@@ -1,5 +1,7 @@
 include <../c3d_params.scad>;
 
+//https://www.thingiverse.com/thing:2035221
+
 module hex_r(r, h) {
  b=60; d=2*r*sin(b);
  translate([0,0,h/2]) {

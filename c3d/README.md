@@ -24,13 +24,26 @@
 - Harbors
 - Numbers
 
+- Barbarians plan in a tile: https://www.thingiverse.com/thing:1254404
+- Merchant: https://www.thingiverse.com/thing:1254404
 - Frames
 - The Fishermen of Catan
 - Event cards (dice-replacement)
+- Warship markers? https://www.thingiverse.com/thing:1393862
 
-# Catanmaps
+- https://www.buildxyz.xyz/3d-catan-better-settlers-build-guide/
 
-http://www.catanmaps.com
+- [settlers catan style (magnetic)](https://www.thingiverse.com/thing:1238980)
+- [catan-style boardgame 2.0 (magnetic & multicolor)](https://www.thingiverse.com/thing:2525047)
+- [Cities & knights (expansion for settlers)](https://www.thingiverse.com/thing:1254404)
+- [Seafarers (expansion for settlers)](https://www.thingiverse.com/thing:1393862)
+- [Explorers & pirates (expansion for settlers)](https://www.thingiverse.com/thing:1588996)
+- [Traders & barbarians (expansion for settlers)](https://www.thingiverse.com/thing:853663)
+
+# Maps
+
+- http://www.catanmaps.com
+- https://www.thingiverse.com/thing:1410173
 
 ## Custom tiles
 

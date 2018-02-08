@@ -20,10 +20,11 @@ module settlement() {
    }
  }
 }
-
+/*
 for (i = [0:2]) {
   rotate([0,0,i*120]) translate([.75*base_radius,0,0]) {
     translate([0,0,2]) rotate([0,90,0]) cylinder(r=3,h=1.5*base_radius);
     translate([0,-3,0]) cube([1.5*base_radius,6,2]);
   }
 }
+*/

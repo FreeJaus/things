@@ -48,9 +48,9 @@ module knight(l) {
  translate([0,0,base_thickness]) {
    translate([-r3+1.5*nozzle,0,0]) {
      if(knight_flag==true) {
-       translate([0,0,2.75*base_radius-5]) rotate([0,0,-60]) %knight_flag();
+       translate([0,0,3.25*base_radius-5]) rotate([0,0,-60]) %knight_flag();
      }
-     cylinder(r=1.5*nozzle, h=2.75*base_radius);
+     cylinder(r=3*nozzle, h=3.25*base_radius);
    }
 
    cylinder(r1 = r1, r2 = r2, h=h1*h);

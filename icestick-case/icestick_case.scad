@@ -102,7 +102,7 @@ module ir_hole(z) {
 
 module chamfer(d) {
   offsets = offset_points(d,0);
-  z=nozzle;
+  z=2.5*nozzle;
   translate([0,0,z])
   path_extrude(points=[[-z,z,0],[0,0,0],[0,z,0]], path=[
       for (i = [0 : 1 : len(poly_points) - 1])
@@ -133,7 +133,7 @@ module bottom() {
     union() {
       ir_hole(7);
       // USB
-      translate([-3.5,6.5,2]) cube([4.5,13,10]);
+      translate([-3.5,6.75,2]) cube([4.5,12.5,10]);
     }
   }
 }
@@ -169,12 +169,12 @@ module pin_row(h) {
 }
 
 module j2(r,h) {
-  translate([r,r,0]) linear_extrude(h){
+  translate([.25+r-.75,r-.25,0]) linear_extrude(h){
     hull() {
       translate([0,0,0]) circle(r=r);
-      translate([6-2*r,0,0]) circle(r=r);
-      translate([6-2*r,16-2*r,0]) circle(r=r);
-      translate([0,16-2*r,0]) circle(r=r);
+      translate([7.5-2*r,0,0]) circle(r=r);
+      translate([7.5-2*r,16.5-2*r,0]) circle(r=r);
+      translate([0,16.5-2*r,0]) circle(r=r);
     }
   }
 }
@@ -217,10 +217,10 @@ union(){
   difference(){
     translate([0,0,-wall_height+4]){
       hull_base(.5*nozzle, .25*border_radius, base_thickness+wall_height-4,0);
-      translate([-wall_outer-1.5*nozzle,7.5,1]) cube([10, 11, base_thickness+wall_height-5]);
+      translate([-wall_outer-1.5*nozzle,7.25,1]) cube([10, 11.5, base_thickness+wall_height-5]);
     }
     union() {
-      translate([-1.5*nozzle,6.5,-wall_height+3]) cube([10, 13, 2]);
+      translate([-1.5*nozzle,6.75,-wall_height+3]) cube([10, 12.5, 2]);
       translate([7,-20,-10]) cube([100,50,50]);
     }
   }
@@ -228,7 +228,7 @@ union(){
 union() {
   // IR
   ir_hole(-nozzle);
-  translate([86-nozzle/2,8-nozzle/2,0]) cube([3+nozzle,10+nozzle,10]);
+  translate([85-nozzle/2,8-nozzle/2,-.1]) cube([3+nozzle,10+nozzle,10]);
 }
 }
 }

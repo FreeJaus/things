@@ -33,7 +33,11 @@ Pieza(s) para sujetar la base a los rodamientos lineales de los ejes Y, en susti
 
 https://www.youtube.com/watch?v=7y0F1qbAlFw
 
+### Bowden extruder
+
 ## Marlin
+
+http://marlinfw.org/docs/configuration/configuration.html
 
 ### Joystick
 
@@ -57,6 +61,8 @@ The most interesting pins to be used for a joystick are ADC2 and ADC3, 95 and 94
 ### Fin de carrera y sensores mediante interrupciones
 
 > Enable this feature if all enabled endstop pins are interrupt-capable. This will remove the need to poll the interrupt pins, saving many CPU cycles.
+
+https://github.com/MarlinFirmware/Marlin/issues/5484
 
 Endstop connectors in the GT2560A+ are connected to pins 58, 60, 72, 74, 76 and 78. None of these is interrupt-capable. However, there are ten PCINT pins available and unused: 65-69 and 82-86.
 
@@ -93,7 +99,7 @@ http://marlinfw.org/docs/features/lin_advance.html
 
 ## Acabado de las piezas
 
-- Juego bisturis
+- http://www.geeetech.com/blog/2018/02/essential-tools-that-every-3d-printing-passionist-must-have/
 - ¿Alcohol/acetona?
 
 # Modificaciones/mejoras realizadas.

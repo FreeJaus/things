@@ -22,6 +22,8 @@ Pieza(s) para sujetar la base a los rodamientos lineales de los ejes Y, en susti
 ### Layer fan/blower
 
 - https://www.thingiverse.com/thing:2469333
+- https://www.thingiverse.com/thing:729961
+- https://www.thingiverse.com/thing:1243891
 - Ejemplo blower de capa + BLTouch/3DTouch: https://www.thingiverse.com/thing:1846913
 
 ### Bloque de aluminio para el muelle del extrusor

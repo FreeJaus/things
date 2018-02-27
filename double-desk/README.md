@@ -1,6 +1,6 @@
-Double wood desk design.
+Double wood desk design, built with 1-2x [ALEX Drawer unit](http://www.ikea.com/gb/en/products/storage-furniture/drawer-units-storage-cabinets/alex-drawer-unit-grey-art-00261295/)s, 2x adjustable legs and 2x 240x60cm wooden boards.
 
-![](https://github.com/FreeJaus/things/tree/master/double-desk/double-desk.png)
+![double-desk](https://raw.githubusercontent.com/FreeJaus/things/master/double-desk/double-desk.png)
 
 # RGB LED (non-addressable) strips
 

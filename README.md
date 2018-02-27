@@ -1,3 +1,3 @@
 # Things
 
-Collection of 3D-printable things
+Collection of things/makes/builds (mostly 3D-printable)

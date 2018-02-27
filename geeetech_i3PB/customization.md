@@ -2,6 +2,10 @@ Example configurations for Geeetech Prusa i3 Pro B with GT2560A+ are available i
 
 # Posibles mejoras (ToDo)
 
+## LED strip(s)
+
+Añadir tira de les RGB (no direccionables).
+
 ## Mejorar alargadores del BLTouch/3DTouch a la GT2560A+
 
 ¿Conector único del carro a la placa para llevar servo + bltouch + ventilador?
@@ -41,41 +45,6 @@ https://www.youtube.com/watch?v=7y0F1qbAlFw
 
 http://marlinfw.org/docs/configuration/configuration.html
 
-### Joystick
-
-- https://github.com/MarlinFirmware/Marlin/issues/2775
-- https://github.com/MarlinFirmware/Marlin/pull/2803
-- https://github.com/MarlinFirmware/Marlin/issues/2912
-
-Among 16 available ADC pins, only five seem to be used in the GT2560A+: ADC0, ADC1, ADC8, ADC9, ADC10.
-
-The most interesting pins to be used for a joystick are ADC2 and ADC3, 95 and 94 respectively. These are not shared with any other functionality, so no limitation is introduced.
-
-### LCD
-
-- Bootscreen
-- Menu customization/customizer
-- References:
-  - https://github.com/MarlinFirmware/Marlin/pull/7832
-  - https://www.youtube.com/watch?v=3fGHgzZqaGs
-  - http://marlinfw.org/tools/u8glib/converter.html
-
-### Fin de carrera y sensores mediante interrupciones
-
-> Enable this feature if all enabled endstop pins are interrupt-capable. This will remove the need to poll the interrupt pins, saving many CPU cycles.
-
-https://github.com/MarlinFirmware/Marlin/issues/5484
-
-Endstop connectors in the GT2560A+ are connected to pins 58, 60, 72, 74, 76 and 78. None of these is interrupt-capable. However, there are ten PCINT pins available and unused: 65-69 and 82-86.
-
-Therefore, up to eight bridges should be soldered to move those connections to interrupt-capable pins. Shall paths to original pins be cut, those could be reused.
-
-### CH340 + NRF24L01+
-
-- https://github.com/BastilleResearch/mousejack/issues/19
-- https://github.com/insecurityofthings/uC_mousejack
-- http://forum.arduino.cc/index.php?topic=410574.15
-
 ### Linear advance
 
 http://marlinfw.org/docs/features/lin_advance.html
@@ -84,6 +53,8 @@ http://marlinfw.org/docs/features/lin_advance.html
 
 - Con espacio para mantener los cables sobrantes separados de los disipadores, y así mejorar la ventilación.
 - Interruptor para USB. O relé?
+
+The fan uses a JST PH, 2mm, 3-pin connector.
 
 ## Caja externa para la electrónica de control
 
@@ -110,7 +81,7 @@ http://marlinfw.org/docs/features/lin_advance.html
 - Cambio del embellecedor del encoder (LCD) por uno más sencillo/compacto, y adición de un trozo de goma (cortado del sobrante de las correas) para limitar la profundidad.
 - BLTouch/3DTouch:
   - 3DTouch auto leveling sensor-1: http://www.geeetech.com/wiki/images/6/61/3DTouch_auto_leveling_sensor-1.zip
-  - Cable adaptador del conector del sensor al conector utilizado en la GT2560A+ para los fin de carrera.
+  - Cable adaptador del conector del sensor al conector utilizado en la GT2560A+ para los fin de carrera (JST XH, 2.5mm, 2-pin).
   - Cable alargador para el conector del servo.
   - Configuración, prueba y calibrado:
     - http://www.geeetech.com/wiki/index.php/3DTouch_Auto_Leveling_Sensor
